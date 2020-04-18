@@ -3,6 +3,7 @@ var express = require('express')
 const passport = require('passport');
 const session =require('express-session')
 const mongoose = require('mongoose');
+const port = process.env.PORT || 3000;
 
 var app = express()
 
@@ -43,6 +44,9 @@ app.use(function (req,res, next) {
     next();
 });
 
+// app.get('/', function (req,res) {
+//    res.write("Hello World")
+// })
 
 
 // require('./controllers/quizzes.controllers.server')(app)
@@ -51,4 +55,4 @@ require('./controllers/user.controller.server')(app)
 require('./controllers/store.controller.server')(app)
 require('./controllers/product.controller.server')(app)
 // start server listening at port 3000 for HTTP requests
-app.listen(3000)
+app.listen(port)

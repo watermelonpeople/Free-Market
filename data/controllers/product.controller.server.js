@@ -28,4 +28,7 @@ module.exports = (app) => {
         productDao.findAllProduct()
         .then(products => res.json(products)));
 
+    app.get('/', (req, res) =>
+        productDao.findAllProduct()
+            .then(products => res.json(products)));
 }

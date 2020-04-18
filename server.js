@@ -50,9 +50,9 @@ app.use(function (req,res, next) {
 
 
 // require('./controllers/quizzes.controllers.server')(app)
-require('./controllers/review.controller.server')(app)
-require('./controllers/user.controller.server')(app)
-require('./controllers/store.controller.server')(app)
-require('./controllers/product.controller.server')(app)
+require('./data/controllers/review.controller.server')(app)
+require('./data/controllers/user.controller.server')(app)
+require('./data/controllers/store.controller.server')(app)
+require('./data/controllers/product.controller.server')(app)
 // start server listening at port 3000 for HTTP requests
 app.listen(port)

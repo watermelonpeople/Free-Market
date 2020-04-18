@@ -1,0 +1,41 @@
+<h1>Product API</h1>
+
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+
+  input {
+    size: A3;
+  }
+</style>
+
+<div class="input-group-append">
+  <input class="form-control">
+  <button (click)="searchForAll()">
+    Search All Product
+  </button>
+</div>
+
+<!--      <td>{{user._id}}</td>-->
+<!--      <td>{{user.firstname}}</td>-->
+<!--      <td>{{user.lastname}}</td>-->
+<!--      <td>Null</td>-->
+<table class="table">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Prize</th>
+    <th scope="col">Brand</th>
+    <th scope="col">Store Name</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let product of products; let i = index">
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.prize}}</td>
+    <td>{{product.brand}}</td>
+    <td>{{product.store.name}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,60 @@
+
+
+<body>
+<p>Create a new Store</p>
+<div class="container">
+
+
+  <form (submit) = "createStore()">
+    <h3>Your Access ID !</h3>
+    <div class="form-group">
+      <label>Personal Id</label>
+      <input type="text" [(ngModel)]='user_id' name="business_id" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>business_id</label>
+      <input type="text" [(ngModel)]='business_id' name="business_id" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>name</label>
+      <input type="text" [(ngModel)] ='name' name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>address</label>
+      <input type="text" [(ngModel)] ='address' name="address" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>city</label>
+      <input type="text" [(ngModel)] ='city' name="city" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>state</label>
+      <input type="email" [(ngModel)] ='state' name="state" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>postal_code</label>
+      <input type="text" [(ngModel)] ='postal_code' name="postal_code" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>attribute</label>
+      <input type="text" [(ngModel)] ='attribute' name="attribute" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>categories</label>
+      <input type="text" [(ngModel)] ='categories' name="categories" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Hour From Monday to Sunday</label>
+      <input type="text" [(ngModel)] ='Monday' name="Monday" class="form-control">
+      <input type="text" [(ngModel)] ='Tuesday' name="Tuesday" class="form-control">
+      <input type="text" [(ngModel)] ='Wednesday' name="Wednesday" class="form-control">
+      <input type="text" [(ngModel)] ='Thursday' name="Thursday" class="form-control">
+      <input type="text" [(ngModel)] ='Friday' name="Friday" class="form-control">
+      <input type="text" [(ngModel)] ='Saturday' name="Saturday" class="form-control">
+      <input type="text" [(ngModel)] ='Sunday' name="Sunday" class="form-control">
+
+    </div>
+    <input type ='submit' class = 'btn btn btn-success' value="create">
+  </form>
+</div>
+</body>

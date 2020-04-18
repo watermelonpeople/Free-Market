@@ -1,0 +1,40 @@
+<h1>User Api</h1>
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+  input {
+    size: A3;
+  }
+</style>
+
+
+
+<div class="input-group-append" id="button1">
+
+  <button (click)="searchAllUser()" >
+    Search
+  </button>
+
+</div>
+<table class="table">
+  <tr>
+    <th scope="col">_id</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">User Name</th>
+    <th scope="col">Password</th>
+    <th scope="col">Type</th>
+  </tr>
+  <tbody *ngFor="let i of users">
+  <tr>
+    <td>{{i._id}}</td>
+    <td>{{i.firstname}}</td>
+    <td>{{i.lastname}}</td>
+    <td>{{i.username}}</td>
+    <td>{{i.password}}</td>
+    <td>{{i.type}}</td>
+  </tr>
+  </tbody>
+</table>
+

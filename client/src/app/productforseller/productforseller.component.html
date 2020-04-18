@@ -1,0 +1,41 @@
+<h1>Product For Your Store</h1>
+
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+
+  input {
+    size: A3;
+  }
+</style>
+
+<div class="input-group-append">
+  <p>Please input your userID</p>
+  <input [(ngModel)]="userId" class="form-control">
+  <button (click)="searchForProduct()">
+    Search
+  </button>
+</div>
+
+<table class="table"
+       *ngFor="let store of stores; let i =index">
+  <tr>
+    <th scope="col">Product Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Prize</th>
+    <th scope="col">Brand</th>
+    <th scope="col">Store Name</th>
+  </tr>
+  <tbody *ngIf="store.products.length !=0">
+  <tr *ngFor="let product of store.products">
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.prize}}</td>
+    <td>{{product.brand}}</td>
+    <td>{{store.name}}</td>
+
+    <!--        <tr *ngFor="let product of store.products">{{store.name}}</tr>-->
+  </tr>
+  </tbody>
+</table>

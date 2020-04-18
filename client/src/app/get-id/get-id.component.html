@@ -1,0 +1,17 @@
+<h1>Get Your ID</h1>
+
+<form (submit) = "getId()">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" [(ngModel)]='email' name="email" class="form-control">
+  </div>
+  <div>
+    <label>password</label>
+    <input type="text" [(ngModel)] ='password' name="password" class="form-control">
+  </div>
+  <br>
+  <input type ='submit' class = 'btn btn btn-success' value="Get Your Id">
+  <br>
+  <h2>Here is Your Id !</h2>
+  <h3>{{this.Id}}</h3>
+</form>

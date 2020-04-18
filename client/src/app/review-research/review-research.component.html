@@ -1,0 +1,46 @@
+<h1>Review Api</h1>
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+
+  input {
+    size: A3;
+  }
+</style>
+
+<div class="input-group-append">
+  <p>Please input the ID of the review</p>
+  <input [(ngModel)]="id" class="form-control">
+  <button (click)="search()">
+    Search
+  </button>
+</div>
+
+
+
+
+
+
+
+
+<div class="input-group-append">
+  <p>Please the Name of the Store</p>
+  <input [(ngModel)]="storeName" class="form-control">
+  <button (click)="searchTwo()">
+    Search
+  </button>
+</div>
+
+<table class="table">
+  <tr>
+    <th scope="col">Content</th>
+    <th scope="col">Stars</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let i of text; index as j">
+    <td>{{i}}</td>
+    <td>{{stars[j]}}</td>
+  </tr>
+  </tbody>
+</table>

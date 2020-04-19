@@ -29,6 +29,12 @@ import { ProductforsellerComponent } from './productforseller/productforseller.c
 import { CreatereviewComponent } from './createreview/createreview.component';
 import { ReviewforcustomerComponent } from './reviewforcustomer/reviewforcustomer.component';
 import { ReviewforsellerComponent } from './reviewforseller/reviewforseller.component';
+import { CreatemessageComponent } from './createmessage/createmessage.component';
+import { ShowmymessagesComponent } from './showmymessages/showmymessages.component';
+import { ReplymessageComponent } from './replymessage/replymessage.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { CreateSubProductComponent } from './create-sub-product/create-sub-product.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,12 @@ import { ReviewforsellerComponent } from './reviewforseller/reviewforseller.comp
     CreatereviewComponent,
     ReviewforcustomerComponent,
     ReviewforsellerComponent,
+    CreatemessageComponent,
+    ShowmymessagesComponent,
+    ReplymessageComponent,
+    CreateuserComponent,
+    UpdateuserComponent,
+    CreateSubProductComponent,
   ],
   imports: [
     BrowserModule,

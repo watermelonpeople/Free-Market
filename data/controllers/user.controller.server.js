@@ -8,13 +8,32 @@ var auth = jwt({
 });
 module.exports = (app) => {
 
+    app.put('/api/user:userId',(req,res) =>
+    userDao.updateUser(req.body.id,{
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            username: req.body.username,
+            type: req.body.type,
+            email: req.body.email,
+            password: req.body.password,
+            phone: [{
+                number: req.body.forPhone[0].number,
+            }],
+            address: [{
+                street1: req.body.forAddress[0].street1,
+                street2: req.body.forAddress[0].street2,
+                city: req.body.forAddress[0].city,
+                state: req.body.forAddress[0].state,
+                zip: req.body.forAddress[0].zip,
+            }]
+        }
+    ).then(res.sendStatus(200)))
+    
 
-    app.get('/api/userById/:userId', function (req, res) {
-        userDao.findUserById(req.params.userId, function (err, user) {
-            res.json(user)
 
-        })
-    })
+    app.get('/api/user/:userId',(req, res) =>
+        userDao.findUserById(req.params.userId)
+             .then(user => res.json(user)));
 
     app.delete('/deleteUserById/:id', (req, res) =>
         userDao.deleteUserById(req.params.id)
@@ -36,8 +55,8 @@ module.exports = (app) => {
             .then(user => res.json(user)));
 
 
-    app.post('/api/userAuth', (req, res) =>
-        userModel.findOne({email: req.body.email}).then(user => res.json(user)))
+    // app.post('/api/userAuth', (req, res) =>
+    //     userModel.findOne({email: req.body.email}).then(user => res.json(user)))
 
     // app.get('/api/userById/:id', (req, res) =>
     //     userDao.findUserById(req.params.id)

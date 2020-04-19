@@ -13,6 +13,11 @@ module.exports = (app) => {
         reviewDao.findReviewForStoreByName(req.params.storeName)
             .then(store => res.json(store)))
 
+    app.get('/api/reviewSearch/reviews/:id',(req,res) =>
+    reviewDao.findReviewByUserId(req.params.id)
+        .then(store => res.json(store)))
+
+
 
     app.post('/api/createReview', (req, res) => {
             res.sendStatus(200)

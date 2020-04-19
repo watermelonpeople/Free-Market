@@ -6,6 +6,7 @@ const userDao = require('./daos/user.dao.sever')
 const storeDao = require('./daos/store.dao.server')
 const storeModel = require('./models/store/store.model.server')
 const productDao = require('./daos/product.dao.server')
+const messageDao = require('./daos/message.dao.server')
 // storeModel.findById('5e86917df88f987054df1731')
 //     .then(stores => console.log(stores))
 
@@ -61,4 +62,6 @@ const productDao = require('./daos/product.dao.server')
 
 // storeDao.findStoreByUserId('5e94c2088cbd8218707464ae').then(result => console.log(result))
 
-reviewDao.findReviewForStoreByName('Noodles').then(result => console.log(result))
+// reviewDao.findReviewForStoreByName('Noodles').then(result => console.log(result))
+
+// messageDao.findMessageBySender('5e950e2e71907a2c20b338c3').then(result => console.log(result))

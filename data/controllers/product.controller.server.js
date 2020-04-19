@@ -13,10 +13,28 @@ module.exports = (app) => {
     })
 
 
+    app.post('/api/subProduct', (req, res) =>{
+        res.sendStatus(200)
+
+        productDao.createSubProductForStore(req.body.store_id,req.body.mainProduct_id,{
+                name:req.body.name,
+                description:req.body.description,
+                prize:req.body.prize,
+                brand:req.body.brand
+
+            }
+        )
+    })
+
+
     app.get('/api/findProductByStoreId/:storeId', (req,res) =>
         productDao.findProductByStoreId(req.params.storeId)
             .then(user => res.json(user)));
 
+
+    app.get('/api/product/:id', (req,res) =>
+        productDao.findProductById(req.params.id)
+            .then(user => res.json(user)));
 
 
     app.get('/api/findProductByName/:productName', (req, res) =>

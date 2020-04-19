@@ -8,6 +8,14 @@ const productSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "StoreModel",
         required:true
+    },
+    subProducts:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ProductModel",
+    }],
+    belongTo:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ProductModel",
     }
 },{collection: 'products'});
 module.exports = productSchema;

@@ -1,0 +1,48 @@
+<h1>Check your Message Here</h1>
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+
+  input {
+    size: A3;
+  }
+</style>
+
+<div class="input-group-append">
+  <p>Please input Your User ID</p>
+  <input [(ngModel)]="id" class="form-control">
+  <button (click)="search()">
+    Search
+  </button>
+</div>
+<h2>Sent Message</h2>
+<table class="table">
+  <tr>
+    <th scope="col">Message ID</th>
+    <th scope="col">Content</th>
+    <th scope="col">Time</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let i of sendMessage">
+    <td>{{i._id}}</td>
+    <td>{{i.text}}</td>
+    <td>{{i.time}}</td>
+  </tr>
+  </tbody>
+</table>
+<h2>Received Message</h2>
+<table class="table">
+  <tr>
+    <th scope="col">Message ID</th>
+    <th scope="col">Content</th>
+    <th scope="col">Time</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let i of receiveMessage">
+    <td>{{i._id}}</td>
+    <td>{{i.text}}</td>
+    <td>{{i.time}}</td>
+  </tr>
+  </tbody>
+</table>

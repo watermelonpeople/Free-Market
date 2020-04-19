@@ -39,7 +39,10 @@ const userSchema = mongoose.Schema({
             ref: 'ReviewModel'
         }
     ],
-    messages:[
+    sendMessages:[
+        messageSchema
+    ],
+    receiveMessages:[
         messageSchema
     ]
 }, {collection: 'users'});

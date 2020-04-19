@@ -16,16 +16,12 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   authUser() {
-    const user = {
-      email: this.email,
-      password: this.password,
-    }
     if(this.email == 'liu.yic@husky.neu.edu'){
       if(this.password == '123456QAz'){
         this.router.navigate(['/profile']);
       }
     }else{
-      this.service.authentication(user,this.email).subscribe(
+      this.service.authentication(this.email).subscribe(
         user =>  {if(this.password == user[0].password){
           if(user[0].type =='seller'){
             this.router.navigate(['/profileforseller']);

@@ -13,17 +13,29 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  createStore(newProduct) {
+  createProduct(newProduct) {
     let body = JSON.stringify(newProduct);
     console.log('created')
     return this.http.post('http://localhost:3000/api/createNewProduct', body, httpOptions)
       .subscribe();
   }
 
+  createSubProduct(newProduct){
+    let body = JSON.stringify(newProduct);
+    console.log('created')
+    return this.http.post('http://localhost:3000/api/subProduct', body, httpOptions)
+      .subscribe();
+  }
+
   findAllProduct(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:3000/api/findAllProduct/')
+    return this.http.get<Product[]>('http://localhost:3000/api/findAllProduct')
 
   }
+
+  findProductById(id):Observable<Product> {
+    return this.http.get<Product>('http://localhost:3000/api/product/'+id)
+  }
+
 
   findStoreByStoreId(id):Observable<Store> {
     return this.http.get<Store>('http://localhost:3000/api/findStoreByStoreId/' + id)

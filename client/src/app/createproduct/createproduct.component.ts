@@ -25,7 +25,7 @@ export class CreateproductComponent implements OnInit {
       brand:this.brand,
       store:this.store
   }
-  this.service.createStore(newProduct)
+  this.service.createProduct(newProduct)
 
 
   }

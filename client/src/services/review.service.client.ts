@@ -25,6 +25,10 @@ export class ReviewService {
     return this.http.get<Store[]>('http://localhost:3000/api/findstorebyname/' + name)
   }
 
+  findReviewByUserId(id) : Observable<Review[]> {
+    return this.http.get<Review[]>('http://localhost:3000/api/reviewSearch/reviews/'+id)
+  }
+
   createStore(newStore){
     let body = JSON.stringify(newStore);
     console.log('created')

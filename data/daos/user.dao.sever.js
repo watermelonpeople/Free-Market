@@ -3,13 +3,32 @@ const mongoose = require('mongoose')
 const createUser = (user) =>
     userModel.create(user)
 
-// const updateUser = (user) =>
-//     userModel.updateOne()
+const updateUser = (id,user) =>
+    userModel.findByIdAndUpdate({_id:mongoose.Types.ObjectId(id)},{
+        $set: {
+            firstname: user.firstname,
+            lastname: user.lastname,
+            username: user.username,
+            type: user.type,
+            email: user.email,
+            password: user.password,
+            phone: [{
+                number: user.phone[0].number,
+            }],
+            address: [{
+                street1: user.address[0].street1,
+                street2: user.address[0].street2,
+                city: user.address[0].city,
+                state: user.address[0].state,
+                zip: user.address[0].zip,
+            }]
+        }
+    })
 
 
 
 const findUserById = (Id) =>
-    userModel.findById(Id)
+    userModel.find({_id:mongoose.Types.ObjectId(Id)})
 
 const findAllUser = () =>
     userModel.find()
@@ -59,6 +78,7 @@ module.exports = {
     findByUserName,
     addFollowRelationship,
     findUserByEmail,
-    deleteUserById
+    deleteUserById,
+    updateUser
 }
 

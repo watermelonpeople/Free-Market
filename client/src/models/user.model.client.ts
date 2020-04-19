@@ -1,5 +1,6 @@
 import {Phone} from './phone.model.client'
 import {Address} from './address.model.client'
+import {Message} from "./message.model.client";
 export class User {
   _id:string;
   firstname:string;
@@ -13,5 +14,11 @@ export class User {
   ];
   addressSchema:[
     Address
+  ];
+  sendMessages:[
+    Message
+  ];
+  receiveMessages:[
+    Message
   ]
 }

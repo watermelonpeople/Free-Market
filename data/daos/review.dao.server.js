@@ -15,6 +15,10 @@ const findReviewForStoreByName = (name) =>
         .populate("reviews.ReviewModel")
         .exec()
 
+const findReviewByUserId = (userId) =>
+    reviewModel.find({user_id:mongoose.Types.ObjectId(userId)})
+        .populate("business_id")
+        .exec()
 
 
 
@@ -87,5 +91,6 @@ module.exports = {
     findAllReview,
     findReviewById,
     createReviewForStore,
-    findReviewForStoreByName
+    findReviewForStoreByName,
+    findReviewByUserId
 }

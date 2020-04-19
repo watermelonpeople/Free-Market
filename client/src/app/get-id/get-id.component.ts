@@ -19,7 +19,7 @@ export class GetIdComponent implements OnInit {
     const user = {
       email: this.email,
     }
-    this.service.authentication(user, this.email).subscribe(
+    this.service.authentication(this.email).subscribe(
       user => {
         if (this.password == user[0].password) {
           this.Id = user[0]._id;

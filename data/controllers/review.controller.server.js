@@ -21,6 +21,7 @@ module.exports = (app) => {
 
     app.post('/api/createReview', (req, res) => {
             res.sendStatus(200)
+        console.log(req.body)
             return reviewDao.createReviewForStore(req.body.business_id, req.body.user_id, req.body.stars, {
                     review_id: req.body.review_id,
                     useful: req.body.useful,
@@ -28,7 +29,6 @@ module.exports = (app) => {
                     cool: req.body.cool,
                     text: req.body.text,
                     date: req.body.date,
-                    stars:req.body.date
                 }
             )
         }

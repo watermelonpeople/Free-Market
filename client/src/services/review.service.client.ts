@@ -32,7 +32,7 @@ export class ReviewService {
   createStore(newStore){
     let body = JSON.stringify(newStore);
     console.log('created')
-    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/createReview', body, httpOptions)
+    return this.http.post('http://localhost:3000/api/createReview', body, httpOptions)
       .subscribe();
   }
 }

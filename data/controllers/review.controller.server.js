@@ -29,6 +29,7 @@ module.exports = (app) => {
                     cool: req.body.cool,
                     text: req.body.text,
                     date: req.body.date,
+                    stars:req.body.stars
                 }
             )
         }

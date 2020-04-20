@@ -36,28 +36,6 @@ update = (storeId, userId, newStar, id) => {
     console.log(storeId,newStar)
 }
 
-// {
-//     storeModel.updateOne(
-//         {_id: mongoose.Types.ObjectId(storeId)},
-//         {
-//             $push: {
-//                 reviews: id,
-//             },
-//             $set: {
-//                 stars: newStar
-//             },
-//             $inc: {
-//                 review_count: 1
-//             }
-//         });
-//     userModel.updateOne(
-//         {_id: mongoose.Types.ObjectId(userId)},
-//         {
-//             $push: {
-//                 reviews: id,
-//             }
-//         })
-// }
 
 const updateForStore = (storeId, newStar, id) =>
     storeModel.findByIdAndUpdate({_id:storeId},{

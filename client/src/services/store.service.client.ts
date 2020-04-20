@@ -14,33 +14,33 @@ export class StoreService {
   }
 
   findStoreById(id): Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findStoreByUserId/' + id)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findStoreByUserId/' + id)
   }
 
   findStoreByStoreId(id):Observable<Store> {
-    return this.http.get<Store>('http://localhost:3000/api/findStoreByStoreId/' + id)
+    return this.http.get<Store>('https://cs5200projectlyc.herokuapp.com/api/findStoreByStoreId/' + id)
   }
 
  findProductByStoreId(id):Observable<Product[]>{
-    return this.http.get<Product[]>('http://localhost:3000/api/findProductByStoreId/'+id)
+    return this.http.get<Product[]>('https://cs5200projectlyc.herokuapp.com/api/findProductByStoreId/'+id)
  }
 
   findStoreByName(name): Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findstorebyname/' + name)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findstorebyname/' + name)
   }
 
   findStoreByCategory(category):Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findStoreByCategory/'+category)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findStoreByCategory/'+category)
   }
 
   findStoreByCity(city):Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findStoreByCity/'+city)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findStoreByCity/'+city)
   }
 
   createStore(newStore) {
     let body = JSON.stringify(newStore);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/createStore', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/createStore', body, httpOptions)
       .subscribe();
   }
 

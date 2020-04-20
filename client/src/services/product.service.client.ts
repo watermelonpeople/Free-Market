@@ -16,29 +16,29 @@ export class ProductService {
   createProduct(newProduct) {
     let body = JSON.stringify(newProduct);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/createNewProduct', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/createNewProduct', body, httpOptions)
       .subscribe();
   }
 
   createSubProduct(newProduct){
     let body = JSON.stringify(newProduct);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/subProduct', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/subProduct', body, httpOptions)
       .subscribe();
   }
 
   findAllProduct(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:3000/api/findAllProduct')
+    return this.http.get<Product[]>('https://cs5200projectlyc.herokuapp.com/api/findAllProduct')
 
   }
 
   findProductById(id):Observable<Product> {
-    return this.http.get<Product>('http://localhost:3000/api/product/'+id)
+    return this.http.get<Product>('https://cs5200projectlyc.herokuapp.com/api/product/'+id)
   }
 
 
   findStoreByStoreId(id):Observable<Store> {
-    return this.http.get<Store>('http://localhost:3000/api/findStoreByStoreId/' + id)
+    return this.http.get<Store>('https://cs5200projectlyc.herokuapp.com/api/findStoreByStoreId/' + id)
   }
 
 }

@@ -18,21 +18,21 @@ export class ReviewService {
 
   findReviewById(id):Observable<Review>
   {
-    return this.http.get<Review>('http://localhost:3000/api/reviewById/' + id)
+    return this.http.get<Review>('https://cs5200projectlyc.herokuapp.com/api/reviewById/' + id)
   }
 
   findStoreByName(name): Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findstorebyname/' + name)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findstorebyname/' + name)
   }
 
   findReviewByUserId(id) : Observable<Review[]> {
-    return this.http.get<Review[]>('http://localhost:3000/api/reviewSearch/reviews/'+id)
+    return this.http.get<Review[]>('https://cs5200projectlyc.herokuapp.com/api/reviewSearch/reviews/'+id)
   }
 
   createStore(newStore){
     let body = JSON.stringify(newStore);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/createReview', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/createReview', body, httpOptions)
       .subscribe();
   }
 }

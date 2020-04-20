@@ -15,44 +15,44 @@ export class UserService {
   }
 
   findStoreByName(name): Observable<Store[]> {
-    return this.http.get<Store[]>('http://localhost:3000/api/findstorebyname/' + name)
+    return this.http.get<Store[]>('https://cs5200projectlyc.herokuapp.com/api/findstorebyname/' + name)
   }
 
   findMessageByID(id) : Observable<Message>{
-    return this.http.get<Message>('http://localhost:3000/api/messageSearch/' + id)
+    return this.http.get<Message>('https://cs5200projectlyc.herokuapp.com/api/messageSearch/' + id)
   }
 
   findUserById(id): Observable<User> {
-    return this.http.get<User>('http://localhost:3000/api/user/' + id)
+    return this.http.get<User>('https://cs5200projectlyc.herokuapp.com/api/user/' + id)
 
   }
 
   createMessage(message) {
     let body = JSON.stringify(message);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/message', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/message', body, httpOptions)
       .subscribe();
   }
   deleteUserById(id)  {
-    return this.http.delete('http://localhost:3000/deleteUserById/' + id)
+    return this.http.delete('https://cs5200projectlyc.herokuapp.com/deleteUserById/' + id)
   }
 
 
   findUserByUsername(username): Observable<User> {
     console.log(username)
-    return this.http.get<User>('http://localhost:3000/api/userByUserName/' + username)
+    return this.http.get<User>('https://cs5200projectlyc.herokuapp.com/api/userByUserName/' + username)
 
   }
 
   findAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/api/users');
+    return this.http.get<User[]>('https://cs5200projectlyc.herokuapp.com/api/users');
   }
 
 
   createUser(newUser) {
     let body = JSON.stringify(newUser);
     console.log('created')
-    return this.http.post('http://localhost:3000/api/register', body, httpOptions)
+    return this.http.post('https://cs5200projectlyc.herokuapp.com/api/register', body, httpOptions)
       .subscribe();
   }
 
@@ -61,13 +61,13 @@ export class UserService {
     // console.log(body)
     // this.http.post('http://localhost:3000/api/userAuth', body, httpOptions)
     //   .subscribe();
-    return this.http.get<User>('http://localhost:3000/api/userByEmail/' +email);
+    return this.http.get<User>('https://cs5200projectlyc.herokuapp.com/api/userByEmail/' +email);
   }
 
   updateUser(user){
     let body = JSON.stringify(user);
     console.log('Updated')
-    return this.http.put('http://localhost:3000/api/user:userId', body, httpOptions)
+    return this.http.put('https://cs5200projectlyc.herokuapp.com/api/user:userId', body, httpOptions)
       .subscribe();
   }
 

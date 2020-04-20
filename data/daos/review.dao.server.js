@@ -26,14 +26,17 @@ const createReviewForStore = (storeId, userId, newStar, review) => {
     review.business_id = mongoose.Types.ObjectId(storeId)
     review.user_id = mongoose.Types.ObjectId(userId)
     return reviewModel.create(review)
-        .then(newReview => update(storeId,userId,newStar,newReview._id))
+        .then(
+            newReview => update(storeId,userId,newStar,newReview._id)
+
+        )
 }
 
-update = (storeId, userId, newStar, id) => {
+function update (storeId, userId, newStar, id) {
 
     updateForUser(userId,id);
     updateForStore(storeId,newStar,id);
-    console.log(storeId,newStar)
+
 }
 
 
@@ -51,7 +54,7 @@ const updateForStore = (storeId, newStar, id) =>
 
     },function(err, result) {
         if (err) {
-            console.log(err);
+            console.log(result);
         }})
 
 

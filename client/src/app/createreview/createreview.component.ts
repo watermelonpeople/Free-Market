@@ -29,12 +29,14 @@ createReview()
   this.service.findStoreByName(this.nameOfStore).subscribe(store => {
       this.stores = store;
       this.business_id = this.stores[0]._id;
-      this.newStars = (Number(this.stores[0].stars) + Number(this.stars)) / (Number(this.stores[0].review_count) + 1);
+      this.newStars = (Number(this.stores[0].stars)*Number(this.stores[0].review_count)+ Number(this.stars)) / (Number(this.stores[0].review_count) + 1);
+      console.log(this.newStars)
       this.service.createStore({
         review_id:"1",
         user_id: this.user_id,
         business_id: this.business_id,
-        stars: this.newStars,
+        newStars: this.newStars,
+        stars:this.stars,
         useful: 0,
         funny:0,
         cool:0,
